@@ -1,0 +1,14 @@
+.menu ul{
+    background-color: brown;
+}
+.menu li{
+    display:inline-block;
+    margin-left:10px;
+}
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+.menu a:hover{
+    color:yellow
+}
