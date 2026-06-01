@@ -19,6 +19,33 @@ def community():
 def home():
     return redirect(url_for('index'))
 
+@app.route('/publish')
+def publish_do():
+    return render_template('publish.html')
+
+@app.route('/publishing')
+def publishing():
+    title = request.args.get('title')
+    explain = request.args.get('explain')
+    pdf = request.files.get('content')
+    pdf.save(f'./uploads/{title}')
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="1234",
+        database="library"
+    )
+    cursor = db.cursor()
+    sql = "INSERT INTO books (title, descriptions) VALUES (%s, %s)"
+    cursor.execute(sql, (title, explain))
+    db.commit()
+
+    cursor.execute("SELECT * FROM books")
+    data = cursor.fetchall()
+
+    return render_template('library.html', books=data)
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=9000, host='0.0.0.0')
 

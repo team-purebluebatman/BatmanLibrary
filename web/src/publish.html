@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Batman Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="font-size:50px">🦇 Batman Library</h1>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="community.html">Community</a></li>
+        </ul>
+    </nav>
+    <div>
+        <form action="publishing" method="post" enctype="multipart/form-data">
+            <label for="title" style="font-size: 20px;">도서 제목</label>
+            <input class="pub" type="text" id="title " name="title" required>
+            <br>
+            <br>
+            <label for="explain" style="font-size: 20px;">도서 설명</label>
+            <textarea id="explain" name="explain" rows="8" cols="61" style="vertical-align: top; resize: none;"required></textarea>
+            <br>
+            <br>
+            <label for="content" style="font-size: 20px;">도서 PDF</label>
+            <input class="pub" type="file" id="content" name="content" style="font-size: 15px;" required>
+            <br>
+            <button class="pub_btn" style="margin-left: 600px;" type="submit">출판하기</button>
+        </form>
+    </div>
+</body>
+</html>
