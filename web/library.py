@@ -7,7 +7,17 @@ app = Flask(__name__, template_folder='src', static_folder='src/static')
 def index():
     return render_template('index.html')
 
+@app.route('/library.html')
+def library():
+    return render_template('library.html')
 
+@app.route('/community.html')
+def community():
+    return render_template('community.html')
+
+@app.route('/index.html')
+def home():
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True, port=9000, host='0.0.0.0')
