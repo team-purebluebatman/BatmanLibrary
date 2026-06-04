@@ -23,21 +23,23 @@ def home():
 def publish_do():
     return render_template('publish.html')
 
-@app.route('/publishing')
+@app.route('/publishing', methods=['POST'])
 def publishing():
-    title = request.args.get('title')
-    explain = request.args.get('explain')
-    pdf = request.files.get('content')
-    pdf.save(f'./uploads/{title}')
+    title = request.form.get('title')
+    author = request.form.get('author')
+    explain = request.form.get('explain')
+    pdf = request.files['content']
+    pdf.save(f'./web/src/uploads/{title}.pdf')
     db = mysql.connector.connect(
         host="localhost",
+        port=3308,
         user="root",
         password="1234",
         database="library"
     )
     cursor = db.cursor()
-    sql = "INSERT INTO books (title, descriptions) VALUES (%s, %s)"
-    cursor.execute(sql, (title, explain))
+    sql = "INSERT INTO books (book_name, author, descriptions) VALUES (%s, %s, %s)"
+    cursor.execute(sql, (title, author, explain))
     db.commit()
 
     cursor.execute("SELECT * FROM books")
