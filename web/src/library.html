@@ -19,8 +19,15 @@
         </ul>
     </nav>
     <a href="publish"><button class="pub_btn" style="margin-left:1300px;">도서 출판</button></a>
-    {% for book in books %}
-        <p>{{ book[1] }} - {{ book[2] }}</p>
-    {% endfor %}
+    {% if books %}
+        {% for book in books %}
+            <div class="books">
+                <p><span style="font-size:30px">{{ book[1] }}</span> - {{ book[2] }}</p>
+                <p>{{book[3]}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>데이터가 없습니다.</h3>
+    {% endif %}
 </body>
 </html>

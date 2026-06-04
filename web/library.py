@@ -9,7 +9,17 @@ def index():
 
 @app.route('/library.html')
 def library():
-    return render_template('library.html')
+    db = mysql.connector.connect(
+        host="localhost",
+        port=3308,
+        user="root",
+        password="1234",
+        database="library"
+    )
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM books")
+    data = cursor.fetchall()
+    return render_template('library.html', books=data)
 
 @app.route('/community.html')
 def community():
@@ -45,7 +55,7 @@ def publishing():
     cursor.execute("SELECT * FROM books")
     data = cursor.fetchall()
 
-    return render_template('library.html', books=data)
+    return redirect(url_for('library'))
 
 
 if __name__ == '__main__':

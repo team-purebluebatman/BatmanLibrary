@@ -62,3 +62,12 @@ label {
     background-color: yellow;
     color:brown;
 }
+.books{
+    padding:5px 5px 5px 5px;
+    width:1000px;
+    height:120px;
+    border:solid 3px yellow;
+    background:white;
+    box-shadow:5px 5px 5px rgb(85, 85, 85);
+    margin-bottom:10px;
+}

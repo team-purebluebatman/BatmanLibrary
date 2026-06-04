@@ -20,5 +20,4 @@ create table loans(
     foreign key (book_id) references books(book_id),
     foreign key (member_id) references members(member_id)
 );
-ALTER TABLE books
-RENAME COLUMN content TO descriptions;
+
