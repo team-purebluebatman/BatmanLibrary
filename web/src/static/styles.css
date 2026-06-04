@@ -71,3 +71,17 @@ label {
     box-shadow:5px 5px 5px rgb(85, 85, 85);
     margin-bottom:10px;
 }
+.view-btn{
+    float:right;
+    width:120px;
+    height:40px;
+    background-color: burlywood;
+    color: rgb(81, 27, 0);
+    font-family: "Dokdo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: brown;
+    color:white;
+    border-radius: 5px;
+    font-size:20px;
+}

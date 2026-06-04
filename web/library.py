@@ -1,5 +1,6 @@
 import mysql.connector
 from flask import Flask, render_template, redirect, url_for, request
+from flask import send_from_directory
 
 app = Flask(__name__, template_folder='src', static_folder='src/static')
 
@@ -56,6 +57,12 @@ def publishing():
     data = cursor.fetchall()
 
     return redirect(url_for('library'))
+@app.route('/pdf/<filename>')
+def pdf_view(filename):
+    return send_from_directory(
+        'src/uploads',
+        filename
+    )
 
 
 if __name__ == '__main__':

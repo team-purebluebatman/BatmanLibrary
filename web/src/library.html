@@ -22,6 +22,7 @@
     {% if books %}
         {% for book in books %}
             <div class="books">
+                <a href="/pdf/{{book[1]}}.pdf" target="_blank"><button class="view-btn">책 읽기</button></a>
                 <p><span style="font-size:30px">{{ book[1] }}</span> - {{ book[2] }}</p>
                 <p>{{book[3]}}</p>
             </div>
