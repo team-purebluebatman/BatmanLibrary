@@ -24,7 +24,17 @@ def library():
 
 @app.route('/community.html')
 def community():
-    return render_template('community.html')
+    db = mysql.connector.connect(
+        host="localhost",
+        port=3308,
+        user="root",
+        password="1234",
+        database="library"
+    )
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM contents")
+    data = cursor.fetchall()
+    return render_template('community.html', contents=data)
 
 @app.route('/index.html')
 def home():
@@ -33,6 +43,10 @@ def home():
 @app.route('/publish')
 def publish_do():
     return render_template('publish.html')
+
+@app.route('/content')
+def content_do():
+    return render_template('content.html')
 
 @app.route('/publishing', methods=['POST'])
 def publishing():
@@ -53,10 +67,29 @@ def publishing():
     cursor.execute(sql, (title, author, explain))
     db.commit()
 
-    cursor.execute("SELECT * FROM books")
-    data = cursor.fetchall()
-
     return redirect(url_for('library'))
+
+@app.route('/contenting')
+def contenting():
+    ttitle = request.args.get('title')
+    tauthor = request.args.get('author')
+    tcontent = request.args.get('content')
+    db = mysql.connector.connect(
+        host="localhost",
+        port=3308,
+        user="root",
+        password="1234",
+        database="library"
+    )
+    cursor = db.cursor()
+    sql = "INSERT INTO contents (content_title, author, content) VALUES (%s, %s, %s)"
+    cursor.execute(sql, (ttitle, tauthor, tcontent))
+    db.commit()
+
+    return redirect(url_for('community'))
+
+
+
 @app.route('/pdf/<filename>')
 def pdf_view(filename):
     return send_from_directory(

@@ -62,7 +62,7 @@ label {
     background-color: yellow;
     color:brown;
 }
-.books{
+.box{
     padding:5px 5px 5px 5px;
     width:1000px;
     height:120px;
@@ -85,3 +85,26 @@ label {
     border-radius: 5px;
     font-size:20px;
 }
+.con_btn{
+    width:120px;
+    height:40px;
+    background-color: burlywood;
+    color: rgb(81, 27, 0);
+    font-family: "Dokdo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: brown;
+    color:white;
+    border-radius: 5px;
+    font-size:20px;
+}
+.con_btn:hover{
+    background-color: burlywood;
+    color: rgb(81, 27, 0);
+    font-family: "Dokdo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: yellow;
+    color:brown;
+}
+

@@ -21,7 +21,7 @@
     <a href="publish"><button class="pub_btn" style="margin-left:1300px;">도서 출판</button></a>
     {% if books %}
         {% for book in books %}
-            <div class="books">
+            <div class="box">
                 <a href="/pdf/{{book[1]}}.pdf" target="_blank"><button class="view-btn">책 읽기</button></a>
                 <p><span style="font-size:30px">{{ book[1] }}</span> - {{ book[2] }}</p>
                 <p>{{book[3]}}</p>

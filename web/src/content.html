@@ -18,16 +18,21 @@
             <li><a href="community.html">Community</a></li>
         </ul>
     </nav>
-    <a href="content"><button class="con_btn" style="margin-left:1300px;">게시물 올리기</button></a>
-    {% if contents %}
-        {% for c in contents %}
-            <div class="box">
-                <p><span style="font-size:30px">{{ c[1] }}</span> - {{ c[2] }}</p>
-                <p>{{c[3]}}</p>
-            </div>
-        {% endfor %}
-    {% else %}
-        <h3>데이터가 없습니다.</h3>
-    {% endif %}
+    <div>
+        <form action="contenting" method="get">
+            <label for="title" style="font-size: 20px;">게시물 제목</label>
+            <input class="pub" type="text" id="title " name="title" required>
+            <br>
+            <br>
+            <label for="author" style="font-size: 20px;">닉네임</label>
+            <input class="pub" type="text" id="author" name="author" required>
+            <br>
+            <br>
+            <label for="content" style="font-size: 20px;">내용</label>
+            <textarea id="content" name="content" rows="8" cols="61" style="vertical-align: top; resize: none;"required></textarea>
+            <br>
+            <button class="pub_btn" style="margin-left: 600px;" type="submit">출판하기</button>
+        </form>
+    </div>
 </body>
 </html>
