@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px">🦇 Batman Library</h1>
+    <h1 style="font-size:50px"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - library</span></h1>
     <nav class="menu">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -18,12 +18,13 @@
             <li><a href="community.html">Community</a></li>
         </ul>
     </nav>
-    <a href="publish"><button class="pub_btn" style="margin-left:1300px;">도서 출판</button></a>
+    <a href="publish"><button class="pub_btn">도서 출판</button></a>
     {% if books %}
         {% for book in books %}
             <div class="box">
                 <a href="/pdf/{{book[1]}}.pdf" target="_blank"><button class="view-btn">책 읽기</button></a>
-                <p><span style="font-size:30px">{{ book[1] }}</span> - {{ book[2] }}</p>
+                <p><span style="font-size:30px"><b>{{ book[1] }}</b></span> - {{ book[2] }}</p>
+                <hr>
                 <p>{{book[3]}}</p>
             </div>
         {% endfor %}

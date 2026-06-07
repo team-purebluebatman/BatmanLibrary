@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px">🦇 Batman Library</h1>
+    <h1 style="font-size:50px"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - library</span></h1>
     <nav class="menu">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -20,19 +20,19 @@
     </nav>
     <div>
         <form action="publishing" method="post" enctype="multipart/form-data">
-            <label for="title" style="font-size: 20px;">도서 제목</label>
+            <label for="title">도서 제목</label>
             <input class="pub" type="text" id="title " name="title" required>
             <br>
             <br>
-            <label for="author" style="font-size: 20px;">저자</label>
+            <label for="author">저자</label>
             <input class="pub" type="text" id="author" name="author" required>
             <br>
             <br>
-            <label for="explain" style="font-size: 20px;">도서 설명</label>
+            <label for="explain">도서 설명</label>
             <textarea id="explain" name="explain" rows="8" cols="61" style="vertical-align: top; resize: none;"required></textarea>
             <br>
             <br>
-            <label for="content" style="font-size: 20px;">도서 PDF</label>
+            <label for="content">도서 PDF</label>
             <input class="pub" type="file" id="content" name="content" style="font-size: 15px;" required>
             <br>
             <button class="pub_btn" style="margin-left: 600px;" type="submit">출판하기</button>

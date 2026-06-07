@@ -1,11 +1,10 @@
 body {
     background-color: burlywood;
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
 }
-
+a{
+    text-decoration:none;
+}
 .menu ul{
     background-color: brown;
 }
@@ -30,37 +29,31 @@ body {
     margin-top: 20px;
 }
 label {
-  display: inline-block;
-  text-align: center;
-  width: 100px; /* 핵심 */
+    font-size:15px;
+    display: inline-block;
+    text-align: center;
+    width: 100px; /* 핵심 */
 }
 .pub {
     width:500px;
-    border-radius: 0px;
-    font-size: 20px;
+    border-radius: 5px;
+    font-size:15px;
     vertical-align: middle;
 }
 .pub_btn{
+    float:right;
     width:120px;
     height:40px;
     background-color: burlywood;
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
     background-color: brown;
     color:white;
     border-radius: 5px;
-    font-size:20px;
+    font-size:15px;
 }
 .pub_btn:hover{
-    background-color: burlywood;
-    color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    background-color: yellow;
-    color:brown;
+    transform:scale(1.1);
+        transition:0.5s;
 }
 .box{
     padding:5px 5px 5px 5px;
@@ -77,34 +70,28 @@ label {
     height:40px;
     background-color: burlywood;
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
     background-color: brown;
     color:white;
     border-radius: 5px;
-    font-size:20px;
+    font-size:15px;
+}
+.view-btn:hover{
+    transform: scale(1.1);
+        transition: 0.5s;
 }
 .con_btn{
+    float:right;
+    font-size:15px;
     width:120px;
     height:40px;
     background-color: burlywood;
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
     background-color: brown;
     color:white;
     border-radius: 5px;
-    font-size:20px;
 }
 .con_btn:hover{
-    background-color: burlywood;
-    color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    background-color: yellow;
-    color:brown;
+    transform:scale(1.1);
+        transition:0.5s;
 }
 

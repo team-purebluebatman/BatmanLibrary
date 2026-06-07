@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px">🦇 Batman Library</h1>
+    <h1 style="font-size:50px"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - community</span></h1>
     <nav class="menu">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -18,11 +18,12 @@
             <li><a href="community.html">Community</a></li>
         </ul>
     </nav>
-    <a href="content"><button class="con_btn" style="margin-left:1300px;">게시물 올리기</button></a>
+    <a href="content"><button class="con_btn">게시물 올리기</button></a>
     {% if contents %}
         {% for c in contents %}
             <div class="box">
-                <p><span style="font-size:30px">{{ c[1] }}</span> - {{ c[2] }}</p>
+                <p><span style="font-size:30px"><b>{{ c[1] }}</b></span> - {{ c[2] }}</p>
+                <hr>
                 <p>{{c[3]}}</p>
             </div>
         {% endfor %}
