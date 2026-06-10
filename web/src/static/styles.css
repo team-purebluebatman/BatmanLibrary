@@ -1,13 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 body {
-    background-color: burlywood;
+    background-color: rgb(222, 197, 165);
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
+    font-family: "Do Hyeon", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-
+a{
+    text-decoration:none;
+    color:rgb(127, 106, 0);
+}
+a:hover{
+    transition:1s;
+    color:rgb(169, 141, 0);
+}
+button{
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+textarea{
+    border:rgb(81, 27, 0) solid, 3px;
+    border-radius:5px;
+}
 .menu ul{
-    background-color: brown;
+    background-color: rgb(81, 27, 0);
 }
 .menu li{
     display:inline-block;
@@ -19,46 +36,84 @@ body {
     text-decoration:none;
 }
 .menu a:hover{
-    color:yellow
+    color:rgb(203, 170, 0);
+    transition:1s;
 }
 .event{
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     color:black;
-    border:5px solid yellow;
+    border:5px solid rgb(127, 106, 0);
     width:700px;
     padding: 20px;
     margin-top: 20px;
 }
 label {
-  display: inline-block;
-  text-align: center;
-  width: 100px; /* 핵심 */
+    font-size:15px;
+    display: inline-block;
+    text-align: center;
+    width: 100px; /* 핵심 */
 }
 .pub {
     width:500px;
-    border-radius: 0px;
-    font-size: 20px;
+    border-radius: 5px;
+    font-size:15px;
     vertical-align: middle;
+    border:rgb(81, 27, 0) solid, 3px;
 }
 .pub_btn{
+    float:right;
     width:120px;
     height:40px;
     background-color: burlywood;
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    background-color: brown;
+    background-color: rgb(81, 27, 0);
     color:white;
     border-radius: 5px;
-    font-size:20px;
+    font-size:15px;
 }
 .pub_btn:hover{
+    box-shadow:3px 3px 3px gray;
+    transform:scale(1.05);
+        transition:0.5s;
+}
+.box{
+    padding:5px 5px 5px 5px;
+    width:1000px;
+    height:120px;
+    border:solid 3px rgb(127, 106, 0);
+    background:white;
+    box-shadow:5px 5px 5px rgb(85, 85, 85);
+    margin-bottom:10px;
+}
+.view-btn{
+    float:right;
+    width:120px;
+    height:40px;
+    color: rgb(81, 27, 0);
+    background-color: rgb(81, 27, 0);
+    color:white;
+    border-radius: 5px;
+    font-size:15px;
+}
+.view-btn:hover{
+    box-shadow:3px 3px 3px gray;
+    transform: scale(1.05);
+        transition: 0.5s;
+}
+.con_btn{
+    float:right;
+    font-size:15px;
+    width:120px;
+    height:40px;
     background-color: burlywood;
     color: rgb(81, 27, 0);
-    font-family: "Dokdo", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    background-color: yellow;
-    color:brown;
+    background-color: rgb(81, 27, 0);
+    color:white;
+    border-radius: 5px;
 }
+.con_btn:hover{
+    box-shadow:3px 3px 3px gray;
+    transform:scale(1.05);
+        transition:0.5s;
+}
+
