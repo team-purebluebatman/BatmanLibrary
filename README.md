@@ -10,9 +10,9 @@
 
 ## ⚙️ 그래서 기능이 뭔데요?
 
-- 도서 대출 기능
+- 커뮤니티 기능
 - <span style="color:yellow">⭐️ 도서 출판 기능 ⭐️</span>
-- 이벤트 참여<br>
+- 도서 보관 기능<br>
 
 ...등의 기능이 있습니다.
 
@@ -29,18 +29,21 @@
 <br>
 
 ## 📟 사용한 기술 스택
-- 🐳 **Docker**
-- 🐍 **Python(Flask)**
-- 💾 **Mysql**
-- 🖥️ **HTML 5 / CSS 3 / JavaScript 5**
+### 🐳 **Docker(containers)**
+- 💾 **Mysql(docker server)**
+- 🐍 **Python(Flask, backend)**
+### 🖥️ **HTML 5**
+### 🎨 **CSS 3**
 
 <br>
-
 <br>
 
 ## 📈 현재 진행 상태
-<progress max=100 value=30 id="pro"></progress> <label for="pro">30%</label> <br>
-- [x] Mysql 구동(Docker 기반)
-- [x] Python Flask로 화면 구현
-- [ ] 로직 구현
+<progress max=100 value=70 id="pro"></progress> <label for="pro">70%</label> <br>
+- [x] Mysql 구동(Docker container)
+- [x] HTML/CSS로 화면 구현
+- [x] Python Flask로 로직 구현
 - [ ] Docker compose로 웹 구동
+
+## 🔗 로직 설명
+저희는

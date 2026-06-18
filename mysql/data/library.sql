@@ -11,5 +11,8 @@ create table contents(
     author varchar(100) not null,
     content varchar(255) not null
 );
-
+create table storages(
+    storage_id int primary key auto_increment,
+    stored_book varchar(255) not null unique
+);
 

@@ -48,6 +48,26 @@ def publish_do():
 def content_do():
     return render_template('content.html')
 
+@app.route("/storage.html")
+def event_open():
+    db = mysql.connector.connect(
+        host="localhost",
+        port=3308,
+        user="root",
+        password="1234",
+        database="library"
+    )
+    cursor = db.cursor()
+    sql = """
+        SELECT s.*, b.descriptions 
+        FROM storages s
+        JOIN books b ON s.stored_book = b.book_name
+    """
+    cursor.execute(sql)
+    data = cursor.fetchall() # 이제 data 안에 보관함 정보와 책 설명이 한 세트로 다 들어있습니다.
+
+    return render_template("storage.html", sto=data, err_c=None)
+
 @app.route('/publishing', methods=['POST'])
 def publishing():
     title = request.form.get('title')
@@ -96,6 +116,37 @@ def pdf_view(filename):
         'src/uploads',
         filename
     )
+
+@app.route("/store")
+def store():
+    try:
+        bookname=request.args.get("action")
+        db = mysql.connector.connect(
+            host="localhost",
+            port=3308,
+            user="root",
+            password="1234",
+            database="library"
+        )
+        cursor = db.cursor()
+        sql = "INSERT INTO storages (stored_book) VALUES (%s)"
+        cursor.execute(sql, (bookname,))
+        db.commit()
+    except mysql.connector.Error as err:
+        if err.errno == 1062:
+            print(f"추출된 에러 코드: {err.errno}")
+            db = mysql.connector.connect(
+                host="localhost",
+                port=3308,
+                user="root",
+                password="1234",
+                database="library"
+            )
+            cursor = db.cursor()
+            cursor.execute("SELECT * FROM storages")
+            data = cursor.fetchall()
+            return render_template("storage.html", sto=data, err_c=err.errno)
+    return redirect(url_for("event_open"))
 
 
 if __name__ == '__main__':

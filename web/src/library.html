@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - library</span></h1>
+    <h1 style="font-size:50px" class="title"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - library</span></h1>
     <nav class="menu">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="library.html">Library</a></li>
             <li><a href="community.html">Community</a></li>
+            <li><a href = "storage.html">Storage</a></li>
         </ul>
     </nav>
     <a href="publish"><button class="pub_btn">도서 출판</button></a>
@@ -23,6 +24,9 @@
         {% for book in books %}
             <div class="box">
                 <a href="/pdf/{{book[1]}}.pdf" target="_blank"><button class="view-btn">책 읽기</button></a>
+                <form action="store" method="get">
+                    <button class="borr-btn" name="action" value="{{book[1]}}">보관함에 담기</button>
+                </form>
                 <p><span style="font-size:30px"><b>{{ book[1] }}</b></span> - {{ book[2] }}</p>
                 <hr>
                 <p>{{book[3]}}</p>
