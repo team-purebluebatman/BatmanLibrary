@@ -46,4 +46,36 @@
 - [ ] Docker compose로 웹 구동
 
 ## 🔗 로직 설명
-저희는
+모든 로직은 Python Flask를 백엔드로 사용하여 구동됩니다.
+### 책 출판
+1. 책 출판 버튼을 눌러 책 제목, 저자 그리고 책 페이지가 될 PDF 파일을 업로드 합니다.
+2. 출판 버튼을 누르면 입력된 정보들이 다음 형식의 코드로 받아와 집니다 :
+``` python
+# form에서 input 받아오기
+title = request.form.get('title')
+```
+PDF 저장은 받아온 title을 토대로 uploads라는 파일에 저장됩니다.
+``` python
+# form에 업로드된 파일 저장
+pdf = request.files['content']
+pdf.save(f'./web/src/uploads/{title}.pdf')
+```
+3. Python 내에서 sql 쿼리문을 작성해 책 데이터를 저장합니다.
+``` python
+# Python에서 SQL 구동하기
+db = mysql.connector.connect(
+    host="localhost",
+    port=3308,
+    user="root",
+    password="1234",
+    database="library"
+)
+cursor = db.cursor()
+sql = "INSERT INTO books (book_name, author, descriptions) VALUES (%s, %s, %s)"
+cursor.execute(sql, (title, author, explain))
+db.commit()
+```
+4. 같은 방법으로 테이블 전체를 SELECT한 결과를 render_template으로 HTML에 보낸 후, return 합니다.
+---
+### 책 읽기/보관함 기능
+**책 읽기**와 **보관함 기능**은 

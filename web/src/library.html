@@ -10,15 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px" class="title"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - library</span></h1>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="library.html">Library</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href = "storage.html">Storage</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="title">
+                <a href="index.html" class="bat-logo">🦇</a>
+                <a href="index.html" class="brand-name">Batman Library</a>
+                <span class="page-label">- library</span>
+            </h1>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="library.html" class="active">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="storage.html">Storage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <a href="publish"><button class="pub_btn">도서 출판</button></a>
     {% if books %}
         {% for book in books %}
@@ -35,5 +44,6 @@
     {% else %}
         <h3>데이터가 없습니다.</h3>
     {% endif %}
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>

@@ -10,15 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px" class="title"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - library</span></h1>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="library.html">Library</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href = "storage.html">Storage</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="title">
+                <a href="index.html" class="bat-logo">🦇</a>
+                <a href="index.html" class="brand-name">Batman Library</a>
+                <span class="page-label">- library</span>
+            </h1>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="library.html" class="active">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="storage.html">Storage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div>
         <form action="publishing" method="post" enctype="multipart/form-data">
             <label for="title">도서 제목</label>
@@ -39,5 +48,6 @@
             <button class="pub_btn" style="margin-left: 600px;" type="submit">출판하기</button>
         </form>
     </div>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>

@@ -10,15 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dokdo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="font-size:50px" class="title"><a href="/index.html">🦇</a> Batman Library<span style="font-size:small"> - storage</span></h1>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="library.html">Library</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href = "storage.html">Storage</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="title">
+                <a href="index.html" class="bat-logo">🦇</a>
+                <a href="index.html" class="brand-name">Batman Library</a>
+                <span class="page-label">- storage</span>
+            </h1>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="storage.html" class="active">Storage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     {% if err_c %}
     <div class="modal-bg" id="errorModal">
         <div class="white-bg">
@@ -32,9 +41,9 @@
         {% for i in sto %}
             <div class="box">
                 <a href="/pdf/{{i[1]}}.pdf" target="_blank"><button class="view-btn">책 읽기</button></a>
-                <p><span style="font-size:30px"><b>{{ i[1] }}</b></span> - ST#10042500{{i[0]}}</p>
+                <p><span style="font-size:30px"><b>{{ i[2] }}</b></span> - ST#10042500{{i[0]}}</p>
                 <hr>
-                <p>{{i[2]}}</p>
+                <p>{{i[3]}}</p>
             </div>
         {% endfor %}
     {% else %}
@@ -56,5 +65,6 @@
             window.history.replaceState({}, document.title, "/storage.html");
         }
     </script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>
