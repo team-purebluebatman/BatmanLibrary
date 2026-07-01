@@ -39,11 +39,11 @@
 <br>
 
 ## 📈 현재 진행 상태
-<progress max=100 value=70 id="pro"></progress> <label for="pro">70%</label> <br>
+<progress max=100 value=100 id="pro"></progress> <label for="pro">70%</label> <br>
 - [x] Mysql 구동(Docker container)
 - [x] HTML/CSS로 화면 구현
 - [x] Python Flask로 로직 구현
-- [ ] Docker compose로 웹 구동
+- [x] Docker compose로 웹 구동
 
 ## 🔗 로직 설명
 모든 로직은 Python Flask를 백엔드로 사용하여 구동됩니다.
