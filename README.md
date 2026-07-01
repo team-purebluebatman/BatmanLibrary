@@ -39,7 +39,7 @@
 <br>
 
 ## 📈 현재 진행 상태
-<progress max=100 value=100 id="pro"></progress> <label for="pro">70%</label> <br>
+<progress max=100 value=100 id="pro"></progress> <label for="pro">100%</label> <br>
 - [x] Mysql 구동(Docker container)
 - [x] HTML/CSS로 화면 구현
 - [x] Python Flask로 로직 구현
