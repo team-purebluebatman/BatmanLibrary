@@ -13,7 +13,7 @@ def index():
 @app.route('/library.html')
 def library():
     db = mysql.connector.connect(
-        host="localhost", port=3308,
+        host="mysql-lib", port=3306,
         user="root", password="1234", database="library"
     )
     cursor = db.cursor()
@@ -26,7 +26,7 @@ def library():
 @app.route('/community.html')
 def community():
     db = mysql.connector.connect(
-        host="localhost", port=3308,
+        host="mysql-lib", port=3306,
         user="root", password="1234", database="library"
     )
     cursor = db.cursor()
@@ -57,7 +57,7 @@ def event_open():
     member_id = session.get('user_id')         # ← 핵심
 
     db = mysql.connector.connect(
-        host="localhost", port=3308,
+        host="mysql-lib", port=3306,
         user="root", password="1234", database="library"
     )
     cursor = db.cursor()
@@ -81,7 +81,7 @@ def publishing():
     pdf = request.files['content']
     pdf.save(f'./web/src/uploads/{title}.pdf')
     db = mysql.connector.connect(
-        host="localhost", port=3308,
+        host="mysql-lib", port=3306,
         user="root", password="1234", database="library"
     )
     cursor = db.cursor()
@@ -98,7 +98,7 @@ def contenting():
     tauthor = request.args.get('author')
     tcontent = request.args.get('content')
     db = mysql.connector.connect(
-        host="localhost", port=3308,
+        host="mysql-lib", port=3306,
         user="root", password="1234", database="library"
     )
     cursor = db.cursor()
@@ -124,7 +124,7 @@ def store():
 
     try:
         db = mysql.connector.connect(
-            host="localhost", port=3308,
+            host="mysql-lib", port=3306,
             user="root", password="1234", database="library"
         )
         cursor = db.cursor()
@@ -137,7 +137,7 @@ def store():
     except mysql.connector.Error as err:
         if err.errno == 1062:
             db = mysql.connector.connect(
-                host="localhost", port=3308,
+                host="mysql-lib", port=3306,
                 user="root", password="1234", database="library"
             )
             cursor = db.cursor()
@@ -161,7 +161,7 @@ def login():
     username = request.form.get('username')
     password = request.form.get('password')
     db = mysql.connector.connect(
-        host="localhost", port=3308,
+        host="mysql-lib", port=3306,
         user="root", password="1234", database="library"
     )
     cursor = db.cursor()
@@ -187,7 +187,7 @@ def signup():
     hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
     try:
         db = mysql.connector.connect(
-            host="localhost", port=3308,
+            host="mysql-lib", port=3306,
             user="root", password="1234", database="library"
         )
         cursor = db.cursor()
@@ -218,4 +218,4 @@ def check_auth():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True, port=9000, host='0.0.0.0')
+    app.run(host="0.0.0.0", port=5000, debug=True)
