@@ -8,4 +8,4 @@ RUN pip install flask mysql-connector-python bcrypt
 
 EXPOSE 5000
 
-CMD ["python", "library.py"]
+CMD ["python", "web/library.py"]
