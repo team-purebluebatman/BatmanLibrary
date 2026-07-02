@@ -19,7 +19,8 @@ services:
 
   flask:
     build:
-      context: ./web
+      context: .
+      dockerfile: web/dockerfile
 
     container_name: library-flask
 
